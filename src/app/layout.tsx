@@ -8,13 +8,12 @@ export const metadata = {
   metadataBase: new URL('https://nextgram.vercel.app'),
 }
 
-export default function Layout(props: { children: React.ReactNode, modal: React.ReactNode }) {
+export default function Layout(props: { children: React.ReactNode}) {
   return (
     <html>
       <body>
         <GithubCorner />
         {props.children}
-        {props.modal}
       </body>
     </html>
   )
