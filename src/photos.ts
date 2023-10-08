@@ -6,7 +6,7 @@ export type Photo = {
   imageSrc: string
 }
 
-const photos: Photo[] = [
+export const photos: Photo[] = [
   {
     id: '1',
     name: 'Kevin Canlas',
@@ -72,4 +72,13 @@ const photos: Photo[] = [
   },
 ];
 
-export default photos;
+export function photoList (page: string|number|null) {
+  if (typeof page === 'string') {
+    page = parseInt(page);
+  }
+  const num = 3;
+  const start = ((page || 1) - 1) * num;
+  const end = start + num;
+
+  return photos.slice(start, end);
+}
